@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+ 
+ 
+h4{
+    font-size: 30px;
+}
+
+#msg{
+    width: 300px;
+    height: 150px;
+}
+
+#name,#email{
+    width: 300px;
+}
+
+    </style>
+</head>
+<body>
+<head-section></head-section>
+<pop-up></pop-up>
+
+<script src="js/header.js"></script>
+<h2>Discussion</h2>
+<ul class="discussion-list">
+    <li>
+        <h3>
+            How to do Proper Irrigation
+        </h3>
+        <p>
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+        </p>
+    </li>
+    <li>
+        <h3>
+            How to do Proper Irrigation
+        </h3>
+        <p>
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+            Irrigation has been a central feature of agriculture for over 5,000 years as humans have been cultivating plants. Historically, it was the basis for economies and societies across the globe. Irrigation is the controlled application of water for farming purposes through manmade systems to supply water requirements not satisfied by rainfall.
+        </p>
+    </li>
+</ul>
+<!-- <button class="discussion-section-button" id="discussionButton">Send Your Question</button> -->
+
+
+
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="close-btn" onclick="togglePopup()">×</div>
+      <h4>Title</h4>
+      <form action="#" method="POST">
+      <label for="name">Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">E-mail:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="email" name="email"><br><br>
+
+      <label for="msg">Message:</label>
+      <input type="text" id="msg" name="msg"><br><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  </div>
+   
+  <button class="discussion-section-button" onclick="togglePopup()">Send Your Question</button>
+  
+  <script>
+      function togglePopup(){
+  document.getElementById("popup-1").classList.toggle("active");
+}
+  </script>
+</body>
+</html>

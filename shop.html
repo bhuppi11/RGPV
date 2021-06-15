@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+ 
+h4{
+    font-size: 30px;
+}
+
+#msg{
+    width: 300px;
+    height: 150px;
+}
+
+.popup>input{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+#img{
+  border: none;
+}
+.error,.req{
+  color: red;
+}
+    </style>
+</head>
+<body>
+<head-section></head-section>
+<pop-up></pop-up>
+
+<script src="js/header.js"></script>
+<h2>Shop</h2>
+<ul class="shop-list">
+    <li>
+        <h3>Buy Tools</h3>
+        <a href="buyTools.html"><img src="images/download.jfif" width="200px" height="150px"></a>
+    </li>
+    <li>
+        <h3>Sell Tools</h3>
+        <img src="images/download.jfif" onclick="togglePopup()" width="200px" height="150px">
+    </li>   
+     <li>
+        <h3>Buy Crop</h3>
+        <a href="buyCrop.html"><img src="images/crop.jpg" width="200px" height="150px"></a>
+    </li>
+    <li>
+        <h3>Sell Crop</h3>
+        <img src="images/crop.jpg" onclick="togglePopup2()" width="200px" height="150px">
+    </li>
+</ul>
+
+
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="close-btn" onclick="togglePopup()">×</div>
+      <h4>Add a tool to sell</h4>
+      <form>
+      <label for="name">Name<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="name" name="name"><br><br>
+      <p class="error" id="nameErr"></p>
+
+      <label for="email">Mobile No<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="email" name="email"><br><br>
+      <p class="error" id="mailErr"></p>
+
+      <label for="tool">Tool Name<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="tool" name="tool"><br><br>
+      <p class="error" id="toolErr"></p>
+
+      <label for="brand">Brand<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="brand" name="brand"><br><br>
+      <p class="error" id="brandErr"></p>
+      
+      <label for="material">Material<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="material" name="material"><br><br> 
+      <p class="error" id="materialErr"></p>
+        
+      <label for="img">Select image:</label>&nbsp;&nbsp;
+      <input type="file" id="img" name="img" accept="image/*">
+      
+
+      <br><br><br>
+      <input type="button" value="Submit" onclick="validate()">
+    </form>
+  </div>
+  </div>
+
+
+
+
+
+  <div class="popup" id="popup-2">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="close-btn" onclick="togglePopup2()">×</div>
+      <h4>Add Crop to sell</h4>
+      <form>
+      <label for="name">Name<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="name" name="name"><br><br>
+      <p class="error" id="nameErr"></p>
+
+      <label for="email">Mobile No<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="email" name="email"><br><br>
+      <p class="error" id="mailErr"></p>
+
+      <label for="tool">Qualtity<span class="req">*</span>:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="tool" name="tool"><br><br>
+      <p class="error" id="toolErr"></p>
+
+      <label for="brand">Price per quintol<span class="req">*</span>:&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="brand" name="brand"><br><br>
+      <p class="error" id="brandErr"></p>
+
+        
+      <label for="img">Select image:</label>&nbsp;&nbsp;
+      <input type="file" id="img" name="img" accept="image/*">
+      
+
+      <br><br><br>
+      <input type="button" value="Submit" onclick="validate()">
+    </form>
+  </div>
+  </div>
+
+</body>
+
+<script>
+    function togglePopup(){
+document.getElementById("popup-1").classList.toggle("active");
+}
+
+function togglePopup2(){
+document.getElementById("popup-2").classList.toggle("active");
+}
+
+function validate(){
+  let name=document.getElementById("name").value;
+  if(name.length==0){
+    document.getElementById("nameErr").innerHTML="Please write your name";
+    return;
+  }
+  else{
+    document.getElementById("nameErr").innerHTML="";
+  }
+
+  let mail=document.getElementById("email").value;
+  
+  var atpos = mail.indexOf("@");
+  var dotpos = mail.lastIndexOf(".");
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length) {
+    document.getElementById("mailErr").innerHTML="Please write a valid email";
+    return;
+  }  else{
+    document.getElementById("mailErr").innerHTML="";
+  }
+
+  let tool=document.getElementById("tool").value;
+  if(tool.length==0){
+    document.getElementById("toolErr").innerHTML="Please write tool name";
+    return;
+  }  else{
+    document.getElementById("toolErr").innerHTML="";
+  }
+
+  let brand=document.getElementById("brand").value;
+  if(brand.length==0){
+    document.getElementById("brandErr").innerHTML="Please write brand name";
+    return;
+  }  else{
+    document.getElementById("brandErr").innerHTML="";
+  }
+  
+  let material=document.getElementById("material").value;
+  if(material.length==0){
+    document.getElementById("materialErr").innerHTML="Please write material";
+    return;
+  }  else{
+    document.getElementById("materialErr").innerHTML="";
+  }
+
+
+}
+</script>
+
+
+
+</html>
